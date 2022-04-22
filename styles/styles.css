@@ -1,8 +1,8 @@
 
 body {
     background: #ED213A;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ED213A, #93291E);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ED213A, #93291E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #77131e, #93291E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #77131e, #93291E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -14,8 +14,18 @@ body {
     align-items: center;
 }
 
+#logo-juego {
+    padding-bottom: 20px;
+}
+
+#my-canvas {
+    background-color: darkgray;
+  }
+  
+
 #devil {
     display: flex;
+    padding: 0 80px;
 }
 
 .btn-bg {
@@ -27,11 +37,15 @@ body {
 }
 
 .btn-bg img {
+    padding: 0 40px;
     width: 180px;
-    
 }
 
 .btn-bg:hover {
     cursor: pointer;
     
 }
+
+#my-canvas, #gameover-screen {
+    display: none;
+  }
