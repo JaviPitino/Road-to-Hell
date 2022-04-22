@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,37 @@
     <title>Road To Hell</title>
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
-<body>
-    <header id="splash-screen">
-        <div >
-            <img src="./images/roadtohell.png" alt="">
-        </div>
-        <div id="btn-start">
-            <img src="./images/btn-start.png" alt="">
-            <!-- <button>DALE CAÑA!
-            </button> -->
-        </div>
-        <div id="devil">
-            <img src="./images/devil2.png" alt="">
 
+<body>
+
+    <div id="container">
+
+        <!-- SPLASH SCREEN -->
+        <div id="splash-screen">
+            <img src="./images/roadtohell.png" alt="">
+            <div>
+                <button class="btn-bg"><img src="./images/btn-start.png" alt=""> </button>
+            </div>
+            <div id="devil">
+                <img src="./images/devil2.png" alt="">
+            </div>
         </div>
-    </header>
-    <script src="main.js"></script>
+
+        <!-- GAME SCREEN -->
+        <canvas id="my-canvas" width="650" height="800"></canvas>
+
+        <!-- GAME OVER SCREEN -->
+        <div id="gameover-screen" class="container">
+            <!-- <img src="./images/gameover.png" width="500" alt="logo"> -->
+            <button id="restart-btn">Prueba de nuevo</button>
+        </div>
+    </div>
+    <script src="./javascript/main.js"></script>
+    <script src="./javascript/game.js"></script>
+    <!-- <script src="angus.js"></script>
+        <script src="cura.js"></script>
+        <script src="cerveza.js"></script>
+        <script src="obispo.js"></script> -->
 </body>
+
 </html>

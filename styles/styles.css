@@ -6,7 +6,7 @@ body {
 
 }
 
-#splash-screen {
+#container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
@@ -18,11 +18,20 @@ body {
     display: flex;
 }
 
-#btn-start {
+.btn-bg {
     margin: 40px;
     padding: 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
 }
 
-#btn-start img {
+.btn-bg img {
     width: 180px;
+    
+}
+
+.btn-bg:hover {
+    cursor: pointer;
+    
 }
