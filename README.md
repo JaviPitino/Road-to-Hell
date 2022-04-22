@@ -1,4 +1,4 @@
-# ROAD TO HELL
+# Road To Hell
 
 Reglas del juego -- 
 Nuestro protagonista tendrá que llegar al infierno sorteando toda clase de maleantes, en este caso, principalmente curas y algún monaguillo. 
@@ -7,17 +7,17 @@ Empiezas con un nivel de maldad de unu 100% y querrás llegar cuanto antes al in
 
 Si te tropiezas con una cerveza te dará energía extra para llegar a tu objetivo, sumará 50 puntos extra(?)
 
-# OBJETIVO
+# Objetivo
 El objetivo del juego es llegar al infierno consiguiendo 1000 puntos.
 
-# PERSONAJES
+# Personajes
 Protagonista. Muñeco que irá descendiendo al infierno
 Cura-- Enemigo que tendrás que esquivar, si chocas con el te restará puntos en tu maldad
 Obispo-- SuperEnemigo a evitar, si chocas con el pierdes automaticamente
 Monaguillo-- Enemigo a esquivas. Si chocas con el te restará puntos en tu maldad
 Cerveza-- Te sumará puntos 50 o 100 puntos(?)
 
-# JUGABILIDAD
+# Jugabilidad
 El juego se basa en sistema de puntuación. Tal como vas avanzando el marcador subirá la puntuación, si consigues llegar a 1000(?) tú jugador llegará al infierno y disfrutará de una vida eterna con las grandes leyendas del ROCK.
 
 El juego se mostrará de arriba hacía abajo, el protagonista irá descendiendo poco a poco al infierno sorteando los enemigos e intentando capturar cervezas.
