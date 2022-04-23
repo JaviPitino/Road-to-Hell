@@ -7,6 +7,16 @@ class Game {
         this.isGameOn = true;
     } 
 
+    upGameOver = () => {
+        if ( this.angus.y + this.angus.h <= 0 ) {
+            this.isGameOn = false;
+            canvas.style.display = "none";
+            // 3. la pantalla final aparece
+            gameOverScreen.style.display = "flex";
+        } 
+    }
+
+
     gameLoop = () => {
 
     // 1. Borrar el canvas
@@ -14,6 +24,7 @@ class Game {
 
     // 2. Acciones o movimientos
     this.angus.gravityAngus();
+    this.upGameOver();
 
 
     // 3. Dibujar los elementos

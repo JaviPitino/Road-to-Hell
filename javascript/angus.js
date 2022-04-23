@@ -18,21 +18,21 @@ class Angus {
     gravityAngus = () => {
         this.y = this.y - this.speed;
     }    
-    // Metodo para que Angus pierda gravedad
 
-    // Metodo para que Angus se mueva hacia los lados
-    moveLeft = () => {
-        this.x = this.x - this.moveSpeed;
-    }
-    moveRight = () => {
-        this.x = this.x + this.moveSpeed;
-    }
-    moveDown = () => {
-        this.y = this.y + this.moveSpeed * 2;
-    }
-    moveDown2 = () => {
-        this.y = this.y + this.moveSpeed * 10;
-    }
+    // Moviemiento de Angus
+    moveAngus = ( event ) => {
+        if ( event.code === 'ArrowLeft' && this.x > 0 ) {
+            this.x = this.x - this.moveSpeed;
+        } else if ( event.code === 'ArrowRight' && this.x < canvas.width - this.w) {
+            this.x = this.x + this.moveSpeed;
+        } else if ( event.code === 'ArrowDown' && this.y > 0 ) {
+            this.y = this.y + this.moveSpeed * 2;
+        } else if ( event.code === 'Space' && this.y + this.h < canvas.height ) {
+            this.y = this.y + this.moveSpeed * 10;
+        }
+    };
+
+    
 };
 
 

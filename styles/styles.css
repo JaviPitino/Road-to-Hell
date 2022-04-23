@@ -57,3 +57,8 @@ body {
 #my-canvas, #gameover-screen {
     display: none;
   }
+
+#gameover-screen {
+    flex-direction: column;
+    justify-content: center;
+}
