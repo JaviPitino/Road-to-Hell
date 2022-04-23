@@ -11,21 +11,51 @@ let game;
 
 // FUNCIONALIDAD
 const startGame = () => {
-    // console.log('funcionando')
-    startScreen.style.display = 'none';
-    canvas.style.display = 'block';
-    gameOverScreen.style.display = 'none';
+    // console.log("iniciando juego")
+    startScreen.style.display = "none"; // para el inicio del juego
+    gameOverScreen.style.display = "none"; // esto para reiniciar el juego
+    canvas.style.display = "block";
+  
+    game = new Game() // crear un juego
+    // console.log(game) 
+    
+    game.gameLoop(); // iniciar el loop del nuevo juego
+}
 
-    game = new Game();
+// MOVIMIENTOS isquiera y derecha
+const pressIzq = (event) => {
+    if ( event.code === 'ArrowLeft' ) {
+    game.angus.moveLeft();
+    }
+}
 
-    game.gameLoop()
+const pressDer = (event) => {
+    if (event.code === 'ArrowRight') {
+    game.angus.moveRight();
+    }
+};
 
+const pressDown = (event) => {
+    if ( event.code === 'ArrowDown') {
+        game.angus.moveDown();
+    }
+};
+
+const pressDown2 = (event) => {
+    if ( event.code === 'Space') {
+        game.angus.moveDown2();
+    }    
 };
 
 
 // ADD EVENT LISTENERS
-startBtn.addEventListener( 'click', startGame );
-restartBtn.addEventListener( 'click', startGame )
+startBtn.addEventListener("click", startGame);
+restartBtn.addEventListener("click", startGame);
+
+window.addEventListener('keydown', pressIzq );
+window.addEventListener('keydown', pressDer );
+window.addEventListener('keydown', pressDown ); 
+window.addEventListener('keydown', pressDown2 ); 
 
 
 
