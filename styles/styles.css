@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     background: #ED213A;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #77131e, #E01518);  /* Chrome 10-25, Safari 5.1-6 */
@@ -61,4 +63,33 @@ body {
 #gameover-screen {
     flex-direction: column;
     justify-content: center;
+}
+
+#final-btns, #restart-btn, #pantalla-inicio, .btn-bg {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.btn-principal {
+    display: flex;
+    justify-content: center;
+}
+
+#restart-btn, #pantalla-inicio, .btn-bg {
+    background-color: #EBB302;
+    color: white;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6em;
+    border: solid 8px black;
+    margin: 0 10px;
+}
+
+#restart-btn:hover, #pantalla-inicio:hover, .btn-bg:hover  {
+    background-color: #771614;
+    transition: 1s;
+    cursor: pointer;
 }

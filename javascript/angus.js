@@ -25,9 +25,9 @@ class Angus {
             this.x = this.x - this.moveSpeed;
         } else if ( event.code === 'ArrowRight' && this.x < canvas.width - this.w) {
             this.x = this.x + this.moveSpeed;
-        } else if ( event.code === 'ArrowDown' && this.y > 0 ) {
+        } else if ( event.code === 'ArrowDown' && this.y < canvas.height - this.h ) {
             this.y = this.y + this.moveSpeed * 2;
-        } else if ( event.code === 'Space' && this.y + this.h < canvas.height ) {
+        } else if ( event.code === 'Space' && this.y < canvas.height - this.h ) {
             this.y = this.y + this.moveSpeed * 10;
         }
     };

@@ -1,6 +1,7 @@
 // Variables GLOBALES
 const startBtn = document.querySelector(".btn-bg");
-const restartBtn = document.querySelector('#restart-btn')
+const restartBtn = document.querySelector('#restart-btn');
+const splashScreen = document.querySelector('#pantalla-inicio');
 const startScreen = document.querySelector('#splash-screen');
 const gameOverScreen = document.querySelector('#gameover-screen');
 const canvas = document.querySelector("#my-canvas");
@@ -8,6 +9,10 @@ const ctx = canvas.getContext("2d")
 
 let game;
 
+const firstScreen = () => {
+    startScreen.style.display = 'block'
+    gameOverScreen.style.display = 'none';
+}
 
 // FUNCIONALIDAD
 const startGame = () => {
@@ -33,7 +38,7 @@ const pressMoveAngus = (event) => {
 // ADD EVENT LISTENERS
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
-
+splashScreen.addEventListener( 'click', firstScreen )
 window.addEventListener('keydown', pressMoveAngus );
 
 
