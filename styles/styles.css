@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-    background: #ED213A;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #77131e, #E01518);  /* Chrome 10-25, Safari 5.1-6 */
+    background: #ab0e11;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #77131e, #E01518);  /* Chrome 10-25, Safari 5.1-6 
     background: linear-gradient(to right, #77131e, #E01518); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     margin: 0;
     padding: 0;
@@ -22,6 +22,7 @@ body {
 }
 
 #my-canvas {
+    margin-top: 40px;
     background-color: darkgray;
   }
   
@@ -89,7 +90,7 @@ body {
 }
 
 #restart-btn:hover, #pantalla-inicio:hover, .btn-bg:hover  {
-    background-color: #771614;
+    background-color: #ab0e11;
     transition: 1s;
     cursor: pointer;
 }
