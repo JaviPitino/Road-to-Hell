@@ -5,6 +5,8 @@ class Game {
         this.bg.src = "./images/bg.png";
         this.angus = new Angus();
         this.isGameOn = true;
+        this.logo = new Image();
+        this.logo.src = "../images/logo-peque.png";
     } 
 
     upGameOver = () => {
@@ -28,8 +30,33 @@ class Game {
 
 
     // 3. Dibujar los elementos
-    ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height)
+   
+
+    ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
     this.angus.drawAngus();
+    ctx.beginPath();
+    ctx.drawImage(this.logo, 20, 20, 100, 60);
+    ctx.fillStyle = '#eab202';
+    ctx.fillRect( 480, 30, 130, 30 );
+    ctx.lineWidth = 6;
+    ctx.strokeRect(480, 30, 130, 30 );
+    ctx.stroke();
+    ctx.closePath();
+
+    ctx.beginPath();
+    ctx.lineWidth = 1;
+    ctx.stroke();
+    
+    // ctx.font('bold 8px arial')
+    ctx.strokeText( 'SCORE', 500, 50 );
+    ctx.strokeText( '0', 590, 50 );
+    
+    
+    ctx.closePath();
+   
+    // ctx.fillText( 'SCORE', 500, 50 );
+    
+    
 
     // 4. Control y Recursion
     if (this.isGameOn) {

@@ -18,57 +18,40 @@ body {
 }
 
 #logo-juego {
+    /* display: flex;
+    justify-content: center; */
     padding-bottom: 50px;
+    margin-left: 5%;
 }
 
 #my-canvas {
     margin-top: 40px;
     background-color: darkgray;
   }
+
   
-
-/* #devil {
-    display: flex;
-    padding: 0 80px;
-}
-
-#devil img {
-    padding: 20px;
-    width: 220px;
-} */
-
-
-/* .btn-bg img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 110px;
-    width: 160px;
-} */
-
+  #my-canvas, #gameover-screen {
+      display: none;
+    }
+    
+    #gameover-screen {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    #final-btns, #restart-btn, #pantalla-inicio, .btn-bg {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 20px;
+        
+    }
+    
 .btn-bg:hover {
     cursor: pointer;
-    
 }
 
-#my-canvas, #gameover-screen {
-    display: none;
-  }
-
-#gameover-screen {
-    flex-direction: column;
-    justify-content: center;
-}
-
-#final-btns, #restart-btn, #pantalla-inicio, .btn-bg {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px;
-    
-}
-
-.btn-bg {
+    .btn-bg {
     width: 200px;
 }
 
