@@ -9,9 +9,12 @@ class Game {
         this.logo.src = "../images/logo-peque.png";
         this.curaArr = [ new Cura( 400, './images/cura.png' ) ];
         this.beerArr = [ new Beer( 300, './images/beer.png' ) ];
+        this.obispoArr = [ new Obispo( 300, './images/obispo.png' ) ]
         this.remove;
         this.score = 0;
-        this.randomPosChange;
+        this.randomCura;
+        this.randomBeer;
+        this.randomObispo;
         this.nuevoCura = 0;
         this.newBeer = 0;
     };
@@ -20,28 +23,44 @@ class Game {
         if (this.curaArr[this.curaArr.length - 1].y < 560 ) {
 
             // Deberia aparecer
-            this.randomPosChange = Math.random() * 500;
-            this.nuevoCura = new Cura( this.randomPosChange, './images/cura.png' );
+            this.randomCura = Math.random() * 500;
+            this.nuevoCura = new Cura( this.randomCura, './images/cura.png' );
             this.curaArr.push(this.nuevoCura);
         }
     };
 
     addNewBeer = () => {
-        if (this.beerArr[this.beerArr.length -1].y < 550 ) {
-            this.randomPosChange = Math.random() * 650;
-            this.newBeer = new Beer( this.randomPosChange, './images/beer.png' );
+        if (this.beerArr.length === 0 || this.beerArr[this.beerArr.length -1].y < 550 ) {
+            this.randomBeer = Math.random() * 650;
+            this.newBeer = new Beer( this.randomBeer, './images/beer.png' );
             this.beerArr.push(this.newBeer);
         }
     };
 
-    collision = () => {
+    addNewObispo = () => {
+        if ( this.obispoArr[this.obispoArr.length - 1].y < -400 ) {
+            this.randomObispo = Math.random() * 500;
+            this.newObispo = new Obispo( this.randomObispo, './images/obispo.png' );
+            this.obispoArr.push( this.newObispo )
+        }
+    }
+
+    collisionCura = () => {
         this.curaArr.forEach((eachCura) => {
             if (this.angus.x < eachCura.x + eachCura.w &&
                 this.angus.x + this.angus.w > eachCura.x &&
                 this.angus.y < eachCura.y + eachCura.h &&
                 this.angus.h + this.angus.y > eachCura.y) {
             
+            this.remove = this.curaArr.indexOf(eachCura);
+            this.curaArr.splice( this.remove, 1 );
 
+            this.isGameOn = true;
+            canvas.style.display = "block";
+            
+            this.score = this.score - 20;        
+               
+              } else if ( this.score < 0 ) {
                 // finalizar el juego
                 // 1. el juego se detiene
                 this.isGameOn = false;
@@ -49,6 +68,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
+
               }
         })
     };
@@ -67,6 +87,7 @@ class Game {
 
             this.isGameOn = true;
             canvas.style.display = "block";
+            this.score = this.score + 20;
         
             }
         });
@@ -94,8 +115,9 @@ class Game {
     this.addNewBeer();
     this.addNewCuras();
     this.upGameOver();
-    this.collision();
+    this.collisionCura();
     this.collisionBeer();
+    this.addNewObispo();
 
     // Mover curas
     this.curaArr.forEach((eachCura) => {
@@ -127,7 +149,7 @@ class Game {
     
     // ctx.font('bold 8px arial')
     ctx.strokeText( 'SCORE', 500, 50 );
-    ctx.strokeText( this.score, 590, 50 );
+    ctx.strokeText( this.score, 580, 50 );
     
     ctx.closePath();
    

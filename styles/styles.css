@@ -27,31 +27,31 @@ body {
 #my-canvas {
     margin-top: 40px;
     background-color: darkgray;
-  }
+}
 
   
-  #my-canvas, #gameover-screen {
+#my-canvas, #gameover-screen {
       display: none;
-    }
+}
     
-    #gameover-screen {
+#gameover-screen {
         flex-direction: column;
         justify-content: center;
-    }
+}
     
-    #final-btns, #restart-btn, #pantalla-inicio, .btn-bg {
+#final-btns, #restart-btn, #pantalla-inicio, .btn-bg {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         padding: 20px;
         
-    }
+}
     
 .btn-bg:hover {
     cursor: pointer;
 }
 
-    .btn-bg {
+.btn-bg {
     width: 200px;
 }
 

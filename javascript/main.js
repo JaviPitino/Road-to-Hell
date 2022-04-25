@@ -30,7 +30,7 @@ const startGame = () => {
     game.gameLoop(); // iniciar el loop del nuevo juego
 }
 
-// MOVIMIENTOS zqueirda y derecha
+// MOVIMIENTOS Izquierda y derecha
 const pressMoveAngus = (event) => {
     game.angus.moveAngus(event);
 };
