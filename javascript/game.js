@@ -17,6 +17,7 @@ class Game {
         this.randomObispo;
         this.nuevoCura = 0;
         this.newBeer = 0;
+        this.name = prompt('¿Cómo te llamas?')
     };
   
     addNewCuras = () => {
@@ -38,8 +39,8 @@ class Game {
     };
 
     addNewObispo = () => {
-        if ( this.obispoArr[this.obispoArr.length - 1].y < -400 ) {
-            this.randomObispo = Math.random() * 500;
+        if ( this.obispoArr[this.obispoArr.length - 1].y < - 400 ) {
+            this.randomObispo = Math.random() * 400;
             this.newObispo = new Obispo( this.randomObispo, './images/obispo.png' );
             this.obispoArr.push( this.newObispo )
         }
@@ -58,7 +59,7 @@ class Game {
             this.isGameOn = true;
             canvas.style.display = "block";
             
-            this.score = this.score - 20;        
+            this.score = this.score - 50;        
                
               } else if ( this.score < 0 ) {
                 // finalizar el juego
@@ -70,6 +71,24 @@ class Game {
                 gameOverScreen.style.display = "flex";
 
               }
+        })
+    };
+
+    collisionObispo = () => {
+        this.obispoArr.forEach((eachObispo) => {
+            if (this.angus.x < eachObispo.x + eachObispo.w &&
+                this.angus.x + this.angus.w > eachObispo.x &&
+                this.angus.y < eachObispo.y + eachObispo.h &&
+                this.angus.h + this.angus.y > eachObispo.y) {
+                // finalizar el juego
+                // 1. el juego se detiene
+                this.isGameOn = false;
+                // 2. el canvas desaparece
+                canvas.style.display = "none";
+                // 3. la pantalla final aparece
+                gameOverScreen.style.display = "flex";
+
+            }
         })
     };
 
@@ -87,12 +106,11 @@ class Game {
 
             this.isGameOn = true;
             canvas.style.display = "block";
-            this.score = this.score + 20;
+            this.score = this.score + 25;
         
             }
         });
     };
-
 
 
     upGameOver = () => {
@@ -106,7 +124,7 @@ class Game {
 
 
     gameLoop = () => {
-
+        
     // 1. Borrar el canvas
     ctx.clearRect( 0, 0, canvas.width, canvas.height );
 
@@ -117,6 +135,7 @@ class Game {
     this.upGameOver();
     this.collisionCura();
     this.collisionBeer();
+    this.collisionObispo();
     this.addNewObispo();
 
     // Mover curas
@@ -129,9 +148,12 @@ class Game {
         eachBeer.moveBeer()
     });
 
-    // 3. Dibujar los elementos
-   
+    // Mover obispo
+    this.obispoArr.forEach((eachObispo) => {
+        eachObispo.moveObispo();
+    })
 
+    // 3. Dibujar los elementos
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
     this.angus.drawAngus();
     ctx.beginPath();
@@ -146,9 +168,10 @@ class Game {
     ctx.beginPath();
     ctx.lineWidth = 1;
     ctx.stroke();
+
+    // SCORE
     
-    // ctx.font('bold 8px arial')
-    ctx.strokeText( 'SCORE', 500, 50 );
+    ctx.strokeText( this.name.toUpperCase() + ' ' + 'SCORE:', 500, 50 );
     ctx.strokeText( this.score, 580, 50 );
     
     ctx.closePath();
@@ -162,6 +185,10 @@ class Game {
     this.beerArr.forEach((eachBeer) => {
         eachBeer.drawBeer();
     });
+
+    this.obispoArr.forEach((eachObispo) => {
+        eachObispo.drawObispo();
+    })
     
 
     // 4. Control y Recursion

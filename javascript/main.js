@@ -8,6 +8,7 @@ const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d")
 
 let game;
+// let name = prompt('¿Cómo te llamas?')
 
 const firstScreen = () => {
     startScreen.style.display = 'block'

@@ -1,9 +1,10 @@
 class Obispo {
+
     constructor( xParam, srcParam ) {
         this.x = xParam;
         this.y = canvas.height;
-        this.w = 80;
-        this.h = 110;
+        this.w = 70;
+        this.h = 100;
         this.img = new Image();
         this.img.src = srcParam;
         this.speed = 5;
