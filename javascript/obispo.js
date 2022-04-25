@@ -4,7 +4,7 @@ class Obispo {
         this.x = xParam;
         this.y = canvas.height;
         this.w = 70;
-        this.h = 100;
+        this.h = 120;
         this.img = new Image();
         this.img.src = srcParam;
         this.speed = 5;
