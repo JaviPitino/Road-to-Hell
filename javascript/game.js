@@ -4,6 +4,8 @@ class Game {
         this.bg = new Image(); // crear la propiedad
         this.bg.src = "./images/roadbg.png";
         this.angus = new Angus();
+        this.fire = new Image();
+        this.fire.src = ('./images/fire.png')
         this.isGameOn = true;
         this.logo = new Image();
         this.logo.src = "../images/logo-peque.png";
@@ -17,9 +19,18 @@ class Game {
         this.randomObispo;
         this.nuevoCura = 0;
         this.newBeer = 0;
-        this.name = prompt('¿Cómo te llamas?')
+        // this.name = prompt('¿Cómo te llamas?');
     };
   
+    // addNewName = () => {
+    //     if (this.name.length > 8 ) {
+    //         prompt('Lo siento, el nombre no puede tener más de 8 caracteres')
+    //     } else if ( this.name === undefined ) {
+    //         prompt('Debe introducir un nombre')
+    //     }
+    //     return this.name;
+    // };
+
     addNewCuras = () => {
         if (this.curaArr[this.curaArr.length - 1].y < 560 ) {
 
@@ -61,7 +72,7 @@ class Game {
             
             this.score = this.score - 50;        
                
-              } else if ( this.score < 0 ) {
+            } else if ( this.score < 0 ) {
                 // finalizar el juego
                 // 1. el juego se detiene
                 this.isGameOn = false;
@@ -70,8 +81,8 @@ class Game {
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
 
-              }
-        })
+            }
+        });
     };
 
     collisionObispo = () => {
@@ -137,6 +148,7 @@ class Game {
     this.collisionBeer();
     this.collisionObispo();
     this.addNewObispo();
+    // this.addNewName();
 
     // Mover curas
     this.curaArr.forEach((eachCura) => {
@@ -154,14 +166,20 @@ class Game {
     })
 
     // 3. Dibujar los elementos
+
+
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
     this.angus.drawAngus();
+    
+    
     ctx.beginPath();
     ctx.drawImage(this.logo, 20, 20, 100, 60);
+    
     ctx.fillStyle = '#eab202';
     ctx.fillRect( 480, 30, 130, 30 );
     ctx.lineWidth = 6;
     ctx.strokeRect(480, 30, 130, 30 );
+    
     ctx.stroke();
     ctx.closePath();
 
@@ -171,7 +189,8 @@ class Game {
 
     // SCORE
     
-    ctx.strokeText( this.name.toUpperCase() + ' ' + 'SCORE:', 500, 50 );
+    // ctx.strokeText( this.name.toUpperCase() + ' ' + 'SCORE:', 500, 50 );
+    ctx.strokeText( 'SCORE:', 500, 50 );
     ctx.strokeText( this.score, 580, 50 );
     
     ctx.closePath();
@@ -189,6 +208,7 @@ class Game {
     this.obispoArr.forEach((eachObispo) => {
         eachObispo.drawObispo();
     })
+    ctx.drawImage( this.fire, 0, 690, canvas.width, 60 )
     
 
     // 4. Control y Recursion
