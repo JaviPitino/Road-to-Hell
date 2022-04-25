@@ -80,7 +80,6 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-
             }
         });
     };
@@ -98,6 +97,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
+                puntosScreen.innerText = `Your Score is: ${this.score}`;
 
             }
         })

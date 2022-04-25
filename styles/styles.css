@@ -70,6 +70,12 @@ body {
 
 }
 
+#puntos {
+    display: flex;
+    font-family: 'Press Start 2P', cursive;
+    justify-content: center;
+}
+
 hr {
     border: 3px dashed black;
     margin-bottom: 30px;

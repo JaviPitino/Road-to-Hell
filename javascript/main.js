@@ -5,7 +5,8 @@ const splashScreen = document.querySelector('#pantalla-inicio');
 const startScreen = document.querySelector('#splash-screen');
 const gameOverScreen = document.querySelector('#gameover-screen');
 const canvas = document.querySelector("#my-canvas");
-const ctx = canvas.getContext("2d")
+const ctx = canvas.getContext("2d");
+const puntosScreen = document.querySelector('#puntos');
 
 let game;
 // let name = prompt('¿Cómo te llamas?')
