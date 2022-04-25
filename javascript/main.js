@@ -24,13 +24,13 @@ const startGame = () => {
     // 1. borrar el canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height)
   
-    game = new Game() // crear un juego
+    game = new Game() // crea el juego
     // console.log(game) 
     
     game.gameLoop(); // iniciar el loop del nuevo juego
 }
 
-// MOVIMIENTOS isquiera y derecha
+// MOVIMIENTOS zqueirda y derecha
 const pressMoveAngus = (event) => {
     game.angus.moveAngus(event);
 };
@@ -38,7 +38,7 @@ const pressMoveAngus = (event) => {
 // ADD EVENT LISTENERS
 startBtn.addEventListener("click", startGame);
 restartBtn.addEventListener("click", startGame);
-splashScreen.addEventListener( 'click', firstScreen )
+splashScreen.addEventListener( 'click', firstScreen );
 window.addEventListener('keydown', pressMoveAngus );
 
 
