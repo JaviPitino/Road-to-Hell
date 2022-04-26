@@ -1,29 +1,55 @@
 # Road To Hell
 
-Reglas del juego -- 
-Nuestro protagonista tendrá que llegar al infierno sorteando toda clase de maleantes, en este caso, principalmente curas y algún monaguillo. 
+# Description
+- El objetivo de nuestro protagonista es llegar al infierno. Para ello deberá sortear toda clase de maleantes, principalmente sacerdotes y algún que otro Papa. 
 
-Empiezas con un nivel de maldad de unu 100% y querrás llegar cuanto antes al infierno. Si te chocas con un cura tu nivel de maldad se restará en un 50%, si chocas con un monaguillo te restará un 25%. Cuando te quedes a 0 pierdes tu maldad y el juego. se mostrará la pantalla de GAME OVER (El infierno puede esperar) y el botón de PLAY AGAIN(Demuestra tu maldad de nuevo).
+- Al tropezar con un sacerdote tu nivel de maldad se restará en 50 puntos, pero no te preocupes, porque con cada jarra de cerveza que recojas ganarás 25 puntos. Si por un casual te quedes a 0 pierdes tu maldad y el juego.
 
-Si te tropiezas con una cerveza te dará energía extra para llegar a tu objetivo, sumará 50 puntos extra(?)
+- Si tropiezas con un Papa, mueres directamente.
 
-# Objetivo
-El objetivo del juego es llegar al infierno consiguiendo 1000 puntos.
 
-# Personajes
-Protagonista. Muñeco que irá descendiendo al infierno
-Cura-- Enemigo que tendrás que esquivar, si chocas con el te restará puntos en tu maldad
-Obispo-- SuperEnemigo a evitar, si chocas con el pierdes automaticamente
-Monaguillo-- Enemigo a esquivas. Si chocas con el te restará puntos en tu maldad
-Cerveza-- Te sumará puntos 50 o 100 puntos(?)
+# Main Funcionalities
+- Movimiento hacía los lados y hacía abajo.
+- Movimiento doble hacia abajo con la barra espaciadora.
+- Aparición aleatoria de enemigos (sacerdotes)
+- Aparición aleatoria de enemigos (Papas)
+- Aparición aleatoria de premios para sumar puntos (Jarras de cerveza)
+- Score que suma los puntos.
+- Botón de retorno al juego.
+- Botón de retorno a la pantalla principal
 
-# Jugabilidad
-El juego se basa en sistema de puntuación. Tal como vas avanzando el marcador subirá la puntuación, si consigues llegar a 1000(?) tú jugador llegará al infierno y disfrutará de una vida eterna con las grandes leyendas del ROCK.
+# Backlog Funcionalities
+- Campo en la pantalla principal para insertar el nombre.
+- Aparición de tu nombre con los puntos acumulados en caso de que éstoso no estén a cero.
+- Aparición de mensaje cuando tu nivel de maldad se queda a cero.
+- Eliminación de premios al chocarte con ellos.
+- Eliminación de enemigos que no te maten directamente.
+- Música.
 
-El juego se mostrará de arriba hacía abajo, el protagonista irá descendiendo poco a poco al infierno sorteando los enemigos e intentando capturar cervezas.
+# Project Structure
+## main.js
+- inputName()
+- firstScreen()
+- startGame()
 
-# BONUS
-La pantalla del fondo puede ir cambiando tal como vayas avanzando en tu objetivo. Puede haber tres diferentes. una que cambie a un color más rojizo u oscuro al llegar a 500 puntos y otra más oscuro o con llamas al llegar al 750.
+## game.js
+- class Game() 
+- add personales()
+- collisions()
+- gameLoop()
+- upGameOver() 
 
-Meter un Obispo que hará que tu nivel de maldad desaparezca
+## player.js
+- Player () { this.x; this.y; this.w; this.h; }
+- drawPlayer () {}
+- movePlayer () {}
+
+
+# States and Transitions
+- Splash screen
+- Game screen
+- GameOver screen
+
+# Extra links
+-
 

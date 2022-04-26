@@ -32,7 +32,7 @@ class Game {
     // };
 
     addNewCuras = () => {
-        if (this.curaArr[this.curaArr.length - 1].y < 560 ) {
+        if (this.curaArr.length === 0 || this.curaArr[this.curaArr.length - 1].y < 560 ) {
 
             this.randomCura = Math.random() * 500;
             this.nuevoCura = new Cura( this.randomCura, './images/cura.png' );
@@ -82,7 +82,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-                puntosScreen.innerText = `MUERTE POR CURA`;
+                puntosScreen.innerText = `${inputName()}, TE HA MATADO UN CURA!`;
             }
         });
     };
@@ -101,7 +101,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-                puntosScreen.innerText = `${placeholder}, your Score is: ${this.score}`;
+                puntosScreen.innerText = `${inputName()}, your Score is: ${this.score}`;
 
             }
         })
@@ -193,7 +193,7 @@ class Game {
     // SCORE
     
     // ctx.strokeText( this.name.toUpperCase() + ' ' + 'SCORE:', 500, 50 );
-    ctx.strokeText( 'SCORE:', 500, 50 );
+    ctx.strokeText( 'EVIL LEVEL:', 500, 50 );
     ctx.strokeText( this.score, 580, 50 );
     
     ctx.closePath();

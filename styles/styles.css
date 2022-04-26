@@ -40,12 +40,12 @@ body {
 }
 
 #logo-juego {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     margin-left: 5%;
 }
 
 #my-canvas {
-    margin-top: 40px;
+    margin-top: 30px;
     background-color: darkgray;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 .how-to-play {
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 0.8em;
     font-family: 'Press Start 2P', cursive;
 

@@ -7,19 +7,32 @@ const gameOverScreen = document.querySelector('#gameover-screen');
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
 const puntosScreen = document.querySelector('#puntos');
-const placeholder = document.querySelector('#name').value;
-console.log(placeholder)
+const audio = new Audio('./sounds/highway-hell2.mp3');
+
+
 let game;
+
+// Capturar el nombre
+const inputName = () => {
+    let placeholder = document.querySelector('#name').value;
+    if ( placeholder === '' || placeholder === undefined ) {
+        alert(`Por favor, introduzca su nombre`);
+    } 
+    return placeholder;
+};
 
 
 const firstScreen = () => {
-    startScreen.style.display = 'block'
+    
+    startScreen.style.display = 'block';
     gameOverScreen.style.display = 'none';
-}
+    document.querySelector('#name').reset();
+
+};
 
 // FUNCIONALIDAD
 const startGame = () => {
-
+    
     // Valor del nombre
     startScreen.style.display = "none"; // para el inicio del juego
     gameOverScreen.style.display = "none"; // esto para reiniciar el juego
@@ -27,11 +40,15 @@ const startGame = () => {
 
     // 1. borrar el canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-  
+    inputName();
     game = new Game() // crea el juego
-    // console.log(game) 
     
+
     game.gameLoop(); // iniciar el loop del nuevo juego
+
+    // Audio
+    // audio.play();
+    audio.volume = 0.2;
 }
 
 // MOVIMIENTOS Izquierda y derecha
