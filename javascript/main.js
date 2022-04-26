@@ -15,19 +15,22 @@ let game;
 // Capturar el nombre
 const inputName = () => {
     let placeholder = document.querySelector('#name').value;
+    // placeholder.toUpperCase();
     if ( placeholder === '' || placeholder === undefined ) {
-        alert(`Por favor, introduzca su nombre`);
+        placeholder = 'Satán';
     } 
     return placeholder;
 };
 
+const resetName = () => {
+    let valorName = document.querySelector('#name');
+    valorName.value = '';
+}
 
 const firstScreen = () => {
-    
     startScreen.style.display = 'block';
     gameOverScreen.style.display = 'none';
-    document.querySelector('#name').reset();
-
+    resetName();
 };
 
 // FUNCIONALIDAD

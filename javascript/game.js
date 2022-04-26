@@ -13,23 +13,13 @@ class Game {
         this.beerArr = [ new Beer( 300, './images/beer.png' ) ];
         this.obispoArr = [ new Obispo( 300, './images/obispo.png' ) ]
         this.remove;
-        this.score = 0;
+        this.score = 100;
         this.randomCura;
         this.randomBeer;
         this.randomObispo;
         this.nuevoCura = 0;
         this.newBeer = 0;
-        // this.name = prompt('¿Cómo te llamas?');
     };
-  
-    // addNewName = () => {
-    //     if (this.name.length > 8 ) {
-    //         prompt('Lo siento, el nombre no puede tener más de 8 caracteres')
-    //     } else if ( this.name === undefined ) {
-    //         prompt('Debe introducir un nombre')
-    //     }
-    //     return this.name;
-    // };
 
     addNewCuras = () => {
         if (this.curaArr.length === 0 || this.curaArr[this.curaArr.length - 1].y < 560 ) {
@@ -82,7 +72,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-                puntosScreen.innerText = `${inputName()}, TE HA MATADO UN CURA!`;
+                puntosScreen.innerText = `${inputName()}, MURETE POR CURA!`;
             }
         });
     };
@@ -101,7 +91,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-                puntosScreen.innerText = `${inputName()}, your Score is: ${this.score}`;
+                puntosScreen.innerText = `${inputName()}, your score is: ${this.score}`;
 
             }
         })
