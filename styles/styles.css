@@ -85,7 +85,7 @@ body {
 
 .how-to-play {
     margin-top: 40px;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-family: 'Press Start 2P', cursive;
 
 }
@@ -94,6 +94,7 @@ body {
     display: flex;
     font-family: 'Press Start 2P', cursive;
     justify-content: center;
+    font-size: 0.8em
 }
 
 hr {
@@ -109,7 +110,7 @@ hr {
     font-family: 'Press Start 2P', cursive;
     font-size: 0.6em;
     border: solid 8px black;
-    margin: 0 10px;
+    margin: 0 5px;
 }
 
 #restart-btn:hover, #pantalla-inicio:hover, .btn-bg:hover  {

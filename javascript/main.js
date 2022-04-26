@@ -16,9 +16,10 @@ let game;
 const inputName = () => {
     let placeholder = document.querySelector('#name').value;
     // placeholder.toUpperCase();
-    if ( placeholder === '' || placeholder === undefined ) {
+    if ( !placeholder ) {
         placeholder = 'Satán';
-    } 
+        // document.querySelector('#btn-principal').disabled = true;
+    }
     return placeholder;
 };
 

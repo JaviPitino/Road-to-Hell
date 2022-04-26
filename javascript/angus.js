@@ -2,10 +2,10 @@ class Angus {
     constructor() {
         this.x = 280;
         this.y = 250;
-        this.w = 80; 
-        this.h = 100;
+        this.w = 90; 
+        this.h = 120;
         this.img = new Image();
-        this.img.src = './images/angus-funko.png';
+        this.img.src = './images/angus-funko3.png';
         this.speed = 2;
         this.moveSpeed = 10;
     }

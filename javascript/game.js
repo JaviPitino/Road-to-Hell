@@ -11,7 +11,7 @@ class Game {
         this.logo.src = "../images/logo-peque.png";
         this.curaArr = [ new Cura( 400, './images/cura.png' ) ];
         this.beerArr = [ new Beer( 300, './images/beer.png' ) ];
-        this.obispoArr = [ new Obispo( 300, './images/obispo.png' ) ]
+        this.obispoArr = [ new Obispo( 350, './images/obispo.png' ) ]
         this.remove;
         this.score = 100;
         this.randomCura;
@@ -22,9 +22,9 @@ class Game {
     };
 
     addNewCuras = () => {
-        if (this.curaArr.length === 0 || this.curaArr[this.curaArr.length - 1].y < 560 ) {
+        if (this.curaArr.length === 0 || this.curaArr[this.curaArr.length - 1].y < 550 ) {
 
-            this.randomCura = Math.random() * 500;
+            this.randomCura = Math.random() * 620;
             this.nuevoCura = new Cura( this.randomCura, './images/cura.png' );
             this.curaArr.push(this.nuevoCura);
         }
@@ -33,7 +33,7 @@ class Game {
     addNewBeer = () => {
         if (this.beerArr.length === 0 || this.beerArr[this.beerArr.length -1].y < 550 ) {
 
-            this.randomBeer = Math.random() * 650;
+            this.randomBeer = Math.random() * 620;
             this.newBeer = new Beer( this.randomBeer, './images/beer.png' );
             this.beerArr.push(this.newBeer);
         }
@@ -72,7 +72,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-                puntosScreen.innerText = `${inputName()}, MURETE POR CURA!`;
+                puntosScreen.innerText = `${inputName()}, has muerto por empacho de curas!`;
             }
         });
     };
@@ -125,6 +125,7 @@ class Game {
             canvas.style.display = "none";
             // 3. la pantalla final aparece
             gameOverScreen.style.display = "flex";
+            puntosScreen.innerText = `${inputName()}, El cielo no es buen sitio para tí`;
         } 
     };
 
