@@ -9,12 +9,11 @@ class Obispo {
         this.img.src = srcParam;
         this.speed = 5;
     }
-    drawObispo =  () => {
+    drawObispo = () => {
         ctx.drawImage( this.img, this.x, this.y, this.w, this.h );
     };
 
     moveObispo = () => {
         this.y = this.y - this.speed;
     }
-
 };

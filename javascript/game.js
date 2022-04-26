@@ -34,7 +34,6 @@ class Game {
     addNewCuras = () => {
         if (this.curaArr[this.curaArr.length - 1].y < 560 ) {
 
-            // Deberia aparecer
             this.randomCura = Math.random() * 500;
             this.nuevoCura = new Cura( this.randomCura, './images/cura.png' );
             this.curaArr.push(this.nuevoCura);
@@ -43,6 +42,7 @@ class Game {
 
     addNewBeer = () => {
         if (this.beerArr.length === 0 || this.beerArr[this.beerArr.length -1].y < 550 ) {
+
             this.randomBeer = Math.random() * 650;
             this.newBeer = new Beer( this.randomBeer, './images/beer.png' );
             this.beerArr.push(this.newBeer);
@@ -51,6 +51,7 @@ class Game {
 
     addNewObispo = () => {
         if ( this.obispoArr[this.obispoArr.length - 1].y < - 400 ) {
+
             this.randomObispo = Math.random() * 400;
             this.newObispo = new Obispo( this.randomObispo, './images/obispo.png' );
             this.obispoArr.push( this.newObispo )
@@ -59,6 +60,7 @@ class Game {
 
     collisionCura = () => {
         this.curaArr.forEach((eachCura) => {
+
             if (this.angus.x < eachCura.x + eachCura.w &&
                 this.angus.x + this.angus.w > eachCura.x &&
                 this.angus.y < eachCura.y + eachCura.h &&
@@ -80,12 +82,14 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
+                puntosScreen.innerText = `MUERTE POR CURA`;
             }
         });
     };
 
     collisionObispo = () => {
         this.obispoArr.forEach((eachObispo) => {
+
             if (this.angus.x < eachObispo.x + eachObispo.w &&
                 this.angus.x + this.angus.w > eachObispo.x &&
                 this.angus.y < eachObispo.y + eachObispo.h &&
@@ -97,7 +101,7 @@ class Game {
                 canvas.style.display = "none";
                 // 3. la pantalla final aparece
                 gameOverScreen.style.display = "flex";
-                puntosScreen.innerText = `Your Score is: ${this.score}`;
+                puntosScreen.innerText = `${placeholder}, your Score is: ${this.score}`;
 
             }
         })
@@ -125,6 +129,7 @@ class Game {
 
 
     upGameOver = () => {
+
         if ( this.angus.y + this.angus.h <= 0 ) {
             this.isGameOn = false;
             canvas.style.display = "none";
@@ -166,8 +171,6 @@ class Game {
     })
 
     // 3. Dibujar los elementos
-
-
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
     this.angus.drawAngus();
     

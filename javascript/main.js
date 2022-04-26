@@ -7,9 +7,10 @@ const gameOverScreen = document.querySelector('#gameover-screen');
 const canvas = document.querySelector("#my-canvas");
 const ctx = canvas.getContext("2d");
 const puntosScreen = document.querySelector('#puntos');
-
+const placeholder = document.querySelector('#name').value;
+console.log(placeholder)
 let game;
-// let name = prompt('¿Cómo te llamas?')
+
 
 const firstScreen = () => {
     startScreen.style.display = 'block'
@@ -18,7 +19,8 @@ const firstScreen = () => {
 
 // FUNCIONALIDAD
 const startGame = () => {
-    // console.log("iniciando juego")
+
+    // Valor del nombre
     startScreen.style.display = "none"; // para el inicio del juego
     gameOverScreen.style.display = "none"; // esto para reiniciar el juego
     canvas.style.display = "block";
