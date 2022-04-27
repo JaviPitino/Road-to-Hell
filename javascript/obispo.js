@@ -7,7 +7,7 @@ class Obispo {
         this.h = 120;
         this.img = new Image();
         this.img.src = srcParam;
-        this.speed = 5;
+        this.speed = 4;
     }
     drawObispo = () => {
         ctx.drawImage( this.img, this.x, this.y, this.w, this.h );

@@ -19,7 +19,7 @@ const inputName = () => {
     if ( !placeholder ) {
         placeholder = 'Satán';
         // document.querySelector('#btn-principal').disabled = true;
-    }
+    } 
     return placeholder;
 };
 

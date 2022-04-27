@@ -6,7 +6,7 @@ class Cura {
         this.h = 90;
         this.img = new Image();
         this.img.src = srcParam;
-        this.speed = 4;
+        this.speed = 3;
     }
     drawCura =  () => {
         ctx.drawImage( this.img, this.x, this.y, this.w, this.h );
