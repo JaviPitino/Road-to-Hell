@@ -6,7 +6,7 @@ class Game {
     this.fire = new Image();
     this.fire.src = "./images/fire.png";
     this.logo = new Image();
-    this.logo.src = "../images/logo-peque.png";
+    this.logo.src = "./images/logo-peque.png";
     this.curaArr = [new Cura(400, "./images/cura.png")];
     this.beerArr = [new Beer(300, "./images/beer.png")];
     this.obispoArr = [new Obispo(350, "./images/obispo.png")];
