@@ -21,14 +21,19 @@ class Game {
     this.newBeer = 0;
   }
 
-// NUEVOS ELEMENTOS
-// DIBUJAR RAYO
+    // NUEVOS ELEMENTOS
+    // DIBUJAR RAYO
   addNewRayo = () => {
-    if ( this.score === 125 ) {
-        this.rayo = new Rayo( this.angus.x, this.angus.y );
-        // this.rayo.drawRayo();
-        console.log('agregando rayo')
-        }
+
+        if ( this.score === 300 && this.rayo === undefined ) {
+            
+            this.rayo = new Rayo( 170, 250 );
+            this.score += 1;
+            setTimeout(() => {
+                this.rayo = undefined;
+            }, 1000)
+        } 
+  
   }
 
 
@@ -193,9 +198,9 @@ class Game {
     
    
 // MOVIMIENTOS
-    if ( this.rayo !== undefined ) {
-        this.rayo.moveRayo();
-    }
+    // if ( this.rayo !== undefined ) {
+    //     this.rayo.moveRayo();
+    // }
     
     
 
@@ -257,9 +262,15 @@ class Game {
       eachObispo.drawObispo();
     });
 
+    
     if ( this.rayo !== undefined ) {
+        // setTimeout(() => {
         this.rayo.drawRayo();
+        // }, 1000);
     }
+    
+            
+      
 
     ctx.drawImage(this.fire, 0, 690, canvas.width, 60);
 
