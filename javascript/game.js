@@ -5,12 +5,13 @@ class Game {
     this.angus = new Angus();
     this.fire = new Image();
     this.fire.src = "./images/fire.png";
-    this.isGameOn = true;
     this.logo = new Image();
     this.logo.src = "../images/logo-peque.png";
     this.curaArr = [new Cura(400, "./images/cura.png")];
     this.beerArr = [new Beer(300, "./images/beer.png")];
     this.obispoArr = [new Obispo(350, "./images/obispo.png")];
+    this.rayo;
+    this.isGameOn = true;
     this.remove;
     this.score = 100;
     this.randomCura;
@@ -20,7 +21,17 @@ class Game {
     this.newBeer = 0;
   }
 
-  // NUEVOS ELEMENTOS
+// NUEVOS ELEMENTOS
+// DIBUJAR RAYO
+  addNewRayo = () => {
+    if ( this.score === 125 ) {
+        this.rayo = new Rayo( this.angus.x, this.angus.y );
+        // this.rayo.drawRayo();
+        console.log('agregando rayo')
+        }
+  }
+
+
   addNewCuras = () => {
     if (
       this.curaArr.length === 0 ||
@@ -177,7 +188,16 @@ class Game {
     this.collisionObispo();
     this.addNewObispo();
     this.subirNivel();
-    // this.addNewName();
+    
+    this.addNewRayo();
+    
+   
+// MOVIMIENTOS
+    if ( this.rayo !== undefined ) {
+        this.rayo.moveRayo();
+    }
+    
+    
 
     // Mover curas
     this.curaArr.forEach((eachCura) => {
@@ -193,6 +213,8 @@ class Game {
     this.obispoArr.forEach((eachObispo) => {
       eachObispo.moveObispo();
     });
+
+
 
     // 3. Dibujar los elementos
     ctx.drawImage(this.bg, 0, 0, canvas.width, canvas.height);
@@ -234,6 +256,11 @@ class Game {
     this.obispoArr.forEach((eachObispo) => {
       eachObispo.drawObispo();
     });
+
+    if ( this.rayo !== undefined ) {
+        this.rayo.drawRayo();
+    }
+
     ctx.drawImage(this.fire, 0, 690, canvas.width, 60);
 
     // 4. Control y Recursion
