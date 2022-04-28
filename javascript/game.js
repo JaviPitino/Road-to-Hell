@@ -9,7 +9,7 @@ class Game {
     this.logo.src = "./images/logo-peque.png";
     this.curaArr = [new Cura(400, "./images/cura.png")];
     this.beerArr = [new Beer(300, "./images/beer.png")];
-    this.obispoArr = [new Obispo(350, "./images/obispo.png")];
+    this.obispoArr = [new Obispo( 650, "./images/obispo.png" )];
     this.rayo;
     this.isGameOn = true;
     this.remove;
@@ -19,21 +19,29 @@ class Game {
     this.randomObispo;
     this.nuevoCura = 0;
     this.newBeer = 0;
+    this.thunder = new Audio('./sounds/thunder.mp3')
   }
 
-    // NUEVOS ELEMENTOS
-    // DIBUJAR RAYO
+  // NUEVOS ELEMENTOS
+  // DIBUJAR RAYO
   addNewRayo = () => {
 
-        if ( this.score === 300 && this.rayo === undefined ) {
+        if ( this.score % 150 === 0 && this.rayo === undefined ) {
             
             this.rayo = new Rayo( 170, 250 );
-            this.score += 1;
+            this.thunder.play();
+            this.thunder.volume = 0.4;
+            this.score += 25;
             setTimeout(() => {
+
                 this.rayo = undefined;
-            }, 1000)
-        } 
-  
+                this.curaArr.splice(0, this.curaArr.length);
+                this.obispoArr.splice(0, this.obispoArr.length);
+
+            }, 800);
+        // } 
+        }
+
   }
 
 
@@ -60,7 +68,7 @@ class Game {
   };
 
   addNewObispo = () => {
-    if (this.obispoArr[this.obispoArr.length - 1].y < -450) {
+    if ( this.obispoArr.length === 0 || this.obispoArr[this.obispoArr.length - 1].y < -450) {
       this.randomObispo = Math.random() * 400;
       this.newObispo = new Obispo(this.randomObispo, "./images/obispo.png");
       this.obispoArr.push(this.newObispo);
@@ -148,33 +156,33 @@ class Game {
 
   // SUBIR lA DIFICULTAD
   subirNivel = () => {
-    if (this.score >= 450) {
+    if (this.score >= 500) {
         this.curaArr.forEach((eachElem) => {
-            eachElem.speed = 10;
-        });
-        this.obispoArr.forEach((eachElem) => {
-            eachElem.speed = 12;
-        });
-    } else if ( this.score >= 350 ) {
-        this.curaArr.forEach((eachElem) => {
-            eachElem.speed = 8;
+            eachElem.speed = 9;
         });
         this.obispoArr.forEach((eachElem) => {
             eachElem.speed = 10;
         });
-    } else if ( this.score >= 250 ) {
+    } else if ( this.score >= 400 ) {
         this.curaArr.forEach((eachElem) => {
-            eachElem.speed = 6;
+            eachElem.speed = 7;
         });
         this.obispoArr.forEach((eachElem) => {
-            eachElem.speed = 8;
+            eachElem.speed = 9;
         });
-    } else if ( this.score >= 150 ) {
+    } else if ( this.score >= 300 ) {
+        this.curaArr.forEach((eachElem) => {
+            eachElem.speed = 5;
+        });
+        this.obispoArr.forEach((eachElem) => {
+            eachElem.speed = 7;
+        });
+    } else if ( this.score >= 200 ) {
         this.curaArr.forEach((eachElem) => {
             eachElem.speed = 4;
         });
         this.obispoArr.forEach((eachElem) => {
-            eachElem.speed = 6;
+            eachElem.speed = 5;
         });
     }
   };

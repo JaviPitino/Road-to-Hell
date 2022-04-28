@@ -34,7 +34,7 @@
 
 ## game.js
 - class Game() 
-- add personales()
+- add personajes()
 - collisions()
 - gameLoop()
 - upGameOver() 

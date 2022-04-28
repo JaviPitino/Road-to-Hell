@@ -31,6 +31,7 @@ const resetName = () => {
 const firstScreen = () => {
     startScreen.style.display = 'block';
     gameOverScreen.style.display = 'none';
+    audio.pause();
     resetName();
 };
 
@@ -51,7 +52,7 @@ const startGame = () => {
     game.gameLoop(); // iniciar el loop del nuevo juego
 
     // Audio
-    // audio.play();
+    audio.play();
     audio.volume = 0.2;
 }
 

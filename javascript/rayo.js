@@ -6,15 +6,9 @@ class Rayo {
         this.h = 400;
         this.img = new Image();
         this.img.src = './images/rayo.png';
-        this.speed = 10;
     }
     drawRayo = () => {
         ctx.drawImage( this.img, this.x, this.y, this.w, this.h );
     };
 
-    // moveRayo = () => {
-    //     setTimeout(() => {
-    //         this.w
-    //     }, 1000);
-    // }
 }
