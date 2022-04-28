@@ -85,9 +85,9 @@ body {
 
 .how-to-play {
     margin-top: 40px;
-    font-size: 0.7em;
+    font-size: 0.6em;
     font-family: 'Press Start 2P', cursive;
-
+    line-height: 1.4em;
 }
 
 #puntos {
