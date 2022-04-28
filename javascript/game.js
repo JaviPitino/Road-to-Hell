@@ -29,7 +29,7 @@ class Game {
             
             this.rayo = new Rayo( 170, 250 );
             this.thunder.play();
-            this.thunder.volume = 0.4;
+            this.thunder.volume = 0.1;
             this.score += 25;
             setTimeout(() => {
 
