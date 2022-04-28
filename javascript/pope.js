@@ -1,6 +1,6 @@
 class Obispo {
 
-    constructor( xParam, srcParam ) {
+    constructor(xParam, srcParam ) {
         this.x = Math.random() * xParam;
         this.y = canvas.height;
         this.w = 70;

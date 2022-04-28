@@ -15,10 +15,9 @@ let game;
 // Capturar el nombre
 const inputName = () => {
     let placeholder = document.querySelector('#name').value;
-    // placeholder.toUpperCase();
+
     if ( !placeholder ) {
         placeholder = 'Satán';
-        // document.querySelector('#btn-principal').disabled = true;
     } 
     return placeholder;
 };

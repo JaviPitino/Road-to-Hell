@@ -9,10 +9,9 @@ class Game {
     this.logo.src = "./images/logo-peque.png";
     this.curaArr = [new Cura(400, "./images/cura.png")];
     this.beerArr = [new Beer(300, "./images/beer.png")];
-    this.obispoArr = [new Obispo( 650, "./images/obispo.png" )];
+    this.obispoArr = [new Obispo( canvas.width, "./images/obispo.png" )];
     this.rayo;
     this.isGameOn = true;
-    this.remove;
     this.score = 100;
     this.randomCura;
     this.randomBeer;
@@ -26,7 +25,7 @@ class Game {
   // DIBUJAR RAYO
   addNewRayo = () => {
 
-        if ( this.score % 150 === 0 && this.rayo === undefined ) {
+        if ( this.score % 200 === 0 && this.rayo === undefined ) {
             
             this.rayo = new Rayo( 170, 250 );
             this.thunder.play();
@@ -69,7 +68,7 @@ class Game {
 
   addNewObispo = () => {
     if ( this.obispoArr.length === 0 || this.obispoArr[this.obispoArr.length - 1].y < -450) {
-      this.randomObispo = Math.random() * 400;
+      this.randomObispo = Math.random() * 650;
       this.newObispo = new Obispo(this.randomObispo, "./images/obispo.png");
       this.obispoArr.push(this.newObispo);
     }
@@ -78,15 +77,15 @@ class Game {
 
   // COLISIONES
   collisionCura = () => {
-    this.curaArr.forEach((eachCura) => {
+    this.curaArr.forEach((eachCura, index) => {
       if (
         this.angus.x < eachCura.x + eachCura.w &&
         this.angus.x + this.angus.w > eachCura.x &&
         this.angus.y < eachCura.y + eachCura.h &&
         this.angus.h + this.angus.y > eachCura.y
       ) {
-        this.remove = this.curaArr.indexOf(eachCura);
-        this.curaArr.splice(this.remove, 1);
+
+        this.curaArr.splice(index, 1);
 
         this.isGameOn = true;
         canvas.style.display = "block";
@@ -113,7 +112,7 @@ class Game {
         this.angus.y < eachObispo.y + eachObispo.h &&
         this.angus.h + this.angus.y > eachObispo.y
       ) {
-        // finalizar el juego
+        // GAME OVER
         // 1. el juego se detiene
         this.isGameOn = false;
         // 2. el canvas desaparece
@@ -126,15 +125,14 @@ class Game {
   };
 
   collisionBeer = () => {
-    this.beerArr.forEach((eachBeer) => {
+    this.beerArr.forEach((eachBeer, index) => {
       if (
         this.angus.x < eachBeer.x + eachBeer.w &&
         this.angus.x + this.angus.w > eachBeer.x &&
         this.angus.y < eachBeer.y + eachBeer.h &&
         this.angus.h + this.angus.y > eachBeer.y
       ) {
-        this.remove = this.beerArr.indexOf(eachBeer);
-        this.beerArr.splice(this.remove, 1);
+        this.beerArr.splice(index, 1);
 
         this.isGameOn = true;
         canvas.style.display = "block";
@@ -248,12 +246,6 @@ class Game {
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    // SCORE
-
-    // ctx.strokeText( this.name.toUpperCase() + ' ' + 'SCORE:', 500, 50 );
-    ctx.strokeText("EVIL LEVEL:", 500, 50);
-    ctx.strokeText(this.score, 580, 50);
-
     ctx.closePath();
 
     // Dibujar Curas
@@ -261,7 +253,7 @@ class Game {
       eachCura.drawCura();
     });
 
-    //Dibujar Cerveza
+    // Dibujar Cervezas
     this.beerArr.forEach((eachBeer) => {
       eachBeer.drawBeer();
     });
@@ -270,16 +262,16 @@ class Game {
       eachObispo.drawObispo();
     });
 
-    
+    // Dibujar Rayo
     if ( this.rayo !== undefined ) {
-        // setTimeout(() => {
         this.rayo.drawRayo();
-        // }, 1000);
-    }
-    
-            
-      
+    };
 
+    // Dibujar Score
+    ctx.strokeText("EVIL LEVEL:", 500, 50);
+    ctx.strokeText(this.score, 580, 50);
+    
+    // Dibuje el fuego
     ctx.drawImage(this.fire, 0, 690, canvas.width, 60);
 
     // 4. Control y Recursion

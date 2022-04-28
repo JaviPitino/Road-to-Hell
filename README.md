@@ -1,55 +1,72 @@
 # Road To Hell
 
-# Description
-- El objetivo de nuestro protagonista es llegar al infierno. Para ello deberá sortear toda clase de maleantes, principalmente sacerdotes y algún que otro Papa. 
+## Description
+- Road To hell is a game inspired by classic games of the 80s. It consists of avoiding collisions with the enemies that appear and collecting beer mugs.
 
-- Al tropezar con un sacerdote tu nivel de maldad se restará en 50 puntos, pero no te preocupes, porque con cada jarra de cerveza que recojas ganarás 25 puntos. Si por un casual te quedes a 0 pierdes tu maldad y el juego.
+- The goal of our protagonist is to hold out as long as possible to get to hell. The player will have to avoid all kinds of crooks, mainly priests and the occasional pope.
 
-- Si tropiezas con un Papa, mueres directamente.
+- When you bump into a priest, your evilness level will be subtracted by 50 points, but don't worry, because with each mug of beer you collect, you will gain 25 points. If by any chance your score drops to 0, you lose your evilness and the game. 
 
-
-# Main Funcionalities
-- Movimiento hacía los lados y hacía abajo.
-- Movimiento doble hacia abajo con la barra espaciadora.
-- Aparición aleatoria de enemigos (sacerdotes)
-- Aparición aleatoria de enemigos (Papas)
-- Aparición aleatoria de premios para sumar puntos (Jarras de cerveza)
-- Score que suma los puntos.
-- Botón de retorno al juego.
-- Botón de retorno a la pantalla principal
-
-# Backlog Funcionalities
-- Campo en la pantalla principal para insertar el nombre.
-- Aparición de tu nombre con los puntos acumulados en caso de que éstoso no estén a cero.
-- Aparición de mensaje cuando tu nivel de maldad se queda a cero.
-- Eliminación de premios al chocarte con ellos.
-- Eliminación de enemigos que no te maten directamente.
-- Música.
-
-# Project Structure
-## main.js
-- inputName()
-- firstScreen()
-- startGame()
-
-## game.js
-- class Game() 
-- add personajes()
-- collisions()
-- gameLoop()
-- upGameOver() 
-
-## player.js
-- Player () { this.x; this.y; this.w; this.h; }
-- drawPlayer () {}
-- movePlayer () {}
+- If you trip over a pope, you die directly.
 
 
-# States and Transitions
+## Main Funcionalities
+- Move sideways and downward
+- Double downward movement with the space bar
+- Random appearance of enemies (priests)
+- Random appearance of enemies (Popes)
+- Random appearance of prizes to add points (beer mugs)
+- Score that adds up the points
+- Button to return to the game
+- Button to return to the main screen
+- Text field in the main screen to insert your name
+- Display of your name with the accumulated points in case they are not at zero.
+- Appearance of message when your evilness level is zero
+- Elimination of prizes when you collide with them
+- Elimination of enemies that do not kill you directly
+- Music
+
+## Backlog Funcionalities
+- Display a ranking with the best scores
+- Improve the movement of the main character
+- Wellcome to hell screen when you manage to win with a high score cap
+
+## Project Structure
+### main.js
+- Global variables
+- General audio
+- Set and reset player's name
+- Global function: startGame()
+- pressMovePlayer()
+- addEventListeners()
+
+### game.js
+- Class Game() 
+- Game properties
+- Methods for creating characters
+- Collision methods
+- GameOver when you go up to the sky
+- Method to increase the difficulty of the game
+- GameLoop()
+
+### player.js, beer.js, priest.js, pope.js
+- Character properties
+- Method to draw the character
+- Method to move the character
+
+
+## States and Transitions
 - Splash screen
 - Game screen
 - GameOver screen
 
-# Extra links
--
+## Extra links
+
+### GitHub
+https://javipitino.github.io/Road-to-Hell/
+
+### Trello
+
+### Slides
+
 
