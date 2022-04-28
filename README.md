@@ -49,11 +49,29 @@
 - Method to increase the difficulty of the game
 - GameLoop()
 
-### player.js, beer.js, priest.js, pope.js
+### player.js
 - Character properties
 - Method to draw the character
 - Method to move the character
 
+### priest.js
+- Character properties
+- Method to draw the character
+- Method to move the character
+
+### pope.js
+- Character properties
+- Method to draw the character
+- Method to move the character
+
+### beer.js
+- Character properties
+- Method to draw the character
+- Method to move the character
+
+### ray.js
+- Character properties
+- Method to draw the character
 
 ## States and Transitions
 - Splash screen
@@ -61,7 +79,6 @@
 - GameOver screen
 
 ## Extra links
-
 ### GitHub
 https://javipitino.github.io/Road-to-Hell/
 
