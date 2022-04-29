@@ -82,8 +82,7 @@
 ### GitHub
 https://javipitino.github.io/Road-to-Hell/
 
-### Trello
-
 ### Slides
+https://docs.google.com/presentation/d/1id8bjvSeXyRjzRhyGXknl7e_VVDES-N2PSp_Ykfl9Ug/edit#slide=id.g1267d5bd452_0_21
 
 
